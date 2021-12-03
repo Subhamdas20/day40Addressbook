@@ -76,12 +76,20 @@ class Contact
             this._email = email
         else throw "Incorrect Email"
     }
+  
 
 }
+var addressBookArray = new Array()
 try{
 let contact1 = new Contact("Subham", "Das", "Durgapur", "Durgapur", "Bengal","713 207","91 7003321213","subham20.sd@gmail.com");
-console.log(contact1);
+let contact2 = new Contact("Avishek", "Paul", "Sukantanagar", "Kolakata", "Bengal","713 646","91 9657845161","avishek@gmail.com");
+addressBookArray.push(contact1);
+addressBookArray.push(contact2);
+
 }
 catch(e){
     console.log(e)
+}
+for(let i=0;i<addressBookArray.length;i++){
+    console.log(addressBookArray[i])
 }
