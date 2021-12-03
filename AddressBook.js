@@ -25,3 +25,4 @@ class Contact
 
 let contact1 = new Contact("Subham", "das", "durgapur", "durgapur", "Bengal",713207,7003321213,"subham20.sd@gmail.com");
 console.log(contact1)
+
