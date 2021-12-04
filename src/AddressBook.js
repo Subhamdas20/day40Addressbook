@@ -177,7 +177,14 @@ let addContact=(firstName,lastName,address,city,state,zip,phoneNumber,email)=>{
     else
     addressBookArray.push(new Contact(firstName,lastName,address,city,state,zip,phoneNumber,email));
 }
-
+let searchByCity =(searchCity)=>{
+    let contact= addressBookArray.filter(contact => contact.city==searchCity);
+    console.log(contact);
+}
+let searchByState =(searchState)=>{
+    let contact= addressBookArray.filter(contact => contact.city==searchState);
+    console.log(contact);
+}
 let param1 = prompt("Enter the First Name to Edit :  ")
 let param2 = prompt("Enter the Last Name to Edit:  ")
 findContact(param1, param2);
@@ -192,3 +199,6 @@ for (let i = 0; i < addressBookArray.length; i++) {
 }
 numberOfContact();
 addContact("Subham");
+console.log();
+searchByCity("Durgapur");
+searchByState("Bengal");
