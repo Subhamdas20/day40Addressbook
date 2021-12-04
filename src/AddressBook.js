@@ -169,6 +169,15 @@ let numberOfContact =()=>{
     console.log("Number of contact is ")
     console.log(addressBookArray.length);
 }
+
+let addContact=(firstName,lastName,address,city,state,zip,phoneNumber,email)=>{
+    if(addressBookArray.some(contacts=>contacts.firstName==firstName)){
+        console.log("Contact already exists");
+    }
+    else
+    addressBookArray.push(new Contact(firstName,lastName,address,city,state,zip,phoneNumber,email));
+}
+
 let param1 = prompt("Enter the First Name to Edit :  ")
 let param2 = prompt("Enter the Last Name to Edit:  ")
 findContact(param1, param2);
@@ -182,3 +191,4 @@ for (let i = 0; i < addressBookArray.length; i++) {
     console.log(addressBookArray[i])
 }
 numberOfContact();
+addContact("Subham");
