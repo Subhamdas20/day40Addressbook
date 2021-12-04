@@ -185,6 +185,17 @@ let searchByState =(searchState)=>{
     let contact= addressBookArray.filter(contact => contact.city==searchState);
     console.log(contact);
 }
+ getCountOfContactsByCity=(city)=>{
+    let count= addressBookArray.filter((contact) => contact.city == city).length;
+    console.log(count);
+
+}
+
+ getCountOfContactsByState=(state)=>{
+    let count= addressBookArray.filter((contact) => contact.state == state).length;
+    console.log(count);
+}
+
 let param1 = prompt("Enter the First Name to Edit :  ")
 let param2 = prompt("Enter the Last Name to Edit:  ")
 findContact(param1, param2);
@@ -202,3 +213,4 @@ addContact("Subham");
 console.log();
 searchByCity("Durgapur");
 searchByState("Bengal");
+getCountOfContactsByCity("Durgapur")
