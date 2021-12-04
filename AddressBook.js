@@ -1,3 +1,5 @@
+const { Console } = require('console');
+
 console.log("Welcome to The Address Book JS Program ")
 class Contact {
     constructor(...params) {
@@ -86,9 +88,9 @@ try {
 catch (e) {
     console.log(e)
 }
-for (let i = 0; i < addressBookArray.length; i++) {
-    console.log(addressBookArray[i])
-}
+// for (let i = 0; i < addressBookArray.length; i++) {
+//     console.log(addressBookArray[i])
+// }
 const prompt = require('prompt-sync')();
 
 
@@ -149,9 +151,29 @@ function findContact(fname, lname) {
         }
     }
 }
-let param1 = prompt("Enter the First Name:  ")
-let param2 = prompt("Enter the Last Name:  ")
+let deleteContact =(Name)=>{
+    let contactToEdit,indexOfName;
+    for (let i = 0; i < addressBookArray.length; i++) {
+        if (addressBookArray[i].firstName == Name )
+            contactToEdit = addressBookArray[i];
+             indexOfName = addressBookArray.indexOf(contactToEdit);
+            console.log(indexOfName);
+            console.log("Delte running");
+    }
+    if(indexOfName!=-1){
+        addressBookArray.splice(indexOfName,1);
+    }
+
+}
+let param1 = prompt("Enter the First Name to Edit :  ")
+let param2 = prompt("Enter the Last Name to Edit:  ")
 findContact(param1, param2);
+for (let i = 0; i < addressBookArray.length; i++) {
+    console.log(addressBookArray[i])
+}
+
+let name = prompt("Enter name to delete ");
+deleteContact(name);
 for (let i = 0; i < addressBookArray.length; i++) {
     console.log(addressBookArray[i])
 }
