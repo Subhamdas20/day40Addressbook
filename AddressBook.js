@@ -151,10 +151,10 @@ function findContact(fname, lname) {
         }
     }
 }
-let deleteContact =(Name)=>{
+let deleteContact =(name)=>{
     let contactToEdit,indexOfName;
     for (let i = 0; i < addressBookArray.length; i++) {
-        if (addressBookArray[i].firstName == Name )
+        if (addressBookArray[i].firstName == name )
             contactToEdit = addressBookArray[i];
              indexOfName = addressBookArray.indexOf(contactToEdit);
             console.log(indexOfName);
@@ -164,6 +164,10 @@ let deleteContact =(Name)=>{
         addressBookArray.splice(indexOfName,1);
     }
 
+}
+let numberOfContact =()=>{
+    console.log("Number of contact is ")
+    console.log(addressBookArray.length);
 }
 let param1 = prompt("Enter the First Name to Edit :  ")
 let param2 = prompt("Enter the Last Name to Edit:  ")
@@ -177,3 +181,4 @@ deleteContact(name);
 for (let i = 0; i < addressBookArray.length; i++) {
     console.log(addressBookArray[i])
 }
+numberOfContact();
