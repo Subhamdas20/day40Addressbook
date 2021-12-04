@@ -74,9 +74,11 @@ class Contact {
             this._email = email
         else throw "Incorrect Email"
     }
-
-
+    toString() {
+        return "First Name : " + this.firstName + ", Last Name : " + this.lastName + ", Address : " + this.address + ", City : " + this.city + ", State : " + this.state + ", Zip : " + this.zip + ", Phone Number : " + this.phoneNumber + ", Email : " + this.email+"\n";
+    }
 }
+
 var addressBookArray = new Array()
 try {
     let contact1 = new Contact("Subham", "Das", "Durgapur", "Durgapur", "Bengal", "713 207", "91 7003321213", "subham20.sd@gmail.com");
@@ -195,6 +197,25 @@ let searchByState =(searchState)=>{
     let count= addressBookArray.filter((contact) => contact.state == state).length;
     console.log(count);
 }
+let sortByName=()=>{
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.firstName).localeCompare(secondPerson.firstName));
+    console.log(addressBookArray.toString());
+}
+
+let sortByCity=()=>{
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.city).localeCompare(secondPerson.city));
+    console.log(addressBookArray.toString());
+}
+
+let sortByState=()=>{
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.state).localeCompare(secondPerson.state));
+    console.log(addressBookArray.toString());
+}
+
+let sortByZip=()=>{
+    addressBookArray.sort((firstPerson, secondPerson) => (firstPerson.zip).localeCompare(secondPerson.zip));
+    console.log(addressBookArray.toString());
+}
 
 let param1 = prompt("Enter the First Name to Edit :  ")
 let param2 = prompt("Enter the Last Name to Edit:  ")
@@ -214,3 +235,7 @@ console.log();
 searchByCity("Durgapur");
 searchByState("Bengal");
 getCountOfContactsByCity("Durgapur")
+sortByCity();
+sortByName();
+sortByState();
+sortByZip();
